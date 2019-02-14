@@ -1,8 +1,8 @@
-# evaluador
+# Evaluador de Agresividad con Machine Learning.
 
 
 
-## para ejecutar 
+## Para ejecutar 
 
 1. Instalar python y agregarlo al Path
 
@@ -18,4 +18,8 @@
 py ClasificadorSVMv1.py
 ```
 
-4. Control 
+## Extras
+
+Conversor csv 
+
+[http://convertcsv.com/csv-to-csv.htm](http://convertcsv.com/csv-to-csv.htm)

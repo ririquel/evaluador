@@ -50,13 +50,17 @@ def train_test_vector(xtrain, xtest):
 # EJECUCION
 # ----------------------------------------------------------------------------
 # 1. CARGAR DATOS encuesta con cabecera texto, clase
-data = pd.read_csv('corpus/csvEncuesta.csv')
+data = pd.read_csv(
+    'convertcsv.csv',
+    sep=';;;#',
+    engine='python'
+)
 
 # 2. CORPUS
-corpus = clean_corpus(data['texto'])
+corpus = clean_corpus(data['A'])
 
 # entrenamiento
-xtrain, xtest, ytrain, ytest = tts(corpus, data['clase'], train_size=0.70)
+xtrain, xtest, ytrain, ytest = tts(corpus, data['B'], test_size=0.30)
 
 # 4. TOKENIZACION + VECTORIZACION
 xtrain, xtest, vectorizer = train_test_vector(xtrain=xtrain, xtest=xtest)
@@ -72,8 +76,17 @@ print(pd.crosstab(ytest, prediccion, rownames=[
       'REAL'], colnames=['PREDICCION']))
 print(classification_report(ytest, prediccion))
 Xnew = [
-    'la clase es mala',
-    'excelente'
+    'eres una gran mujer',
+    'me diviertes mucho',
+    'que mujer mas inteligente',
+    'que tierna eres, ademas de una hermosa persona',
+    'te amo mucho, pero me haces daño',
+    'que seas muy feliz, te deseo lo mejor',
+    'maldita incompetente y loca',
+    'tu eres una zorra',
+    'guatona enferma de loca',
+    'maraca culia',
+    'eres una puta barata'
 ]
 vector_new = vectorizer.transform(Xnew)
 ynew = modelo.predict(vector_new)
