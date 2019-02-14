@@ -51,8 +51,8 @@ def train_test_vector(xtrain, xtest):
 # ----------------------------------------------------------------------------
 # 1. CARGAR DATOS encuesta con cabecera texto, clase
 data = pd.read_csv(
-    'convertcsv.csv',
-    sep=';;;#',
+    'conSWconPOS.csv',
+    # sep=';;;#',
     engine='python'
 )
 
