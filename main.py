@@ -81,6 +81,7 @@ class MiAplicacion(wx.Frame):
 
         self.addToLog(pd.crosstab(ytest, prediccion, rownames=[
             'REAL'], colnames=['PREDICCION']).to_string())
+        self.addToLog("")
         self.addToLog(classification_report(ytest, prediccion))
 
     def procesar(self, texto):
@@ -129,8 +130,8 @@ class MiAplicacion(wx.Frame):
         self.SetBackgroundColour(p1.GetBackgroundColour())
 
         self.Centre(True)
-        self.preparar()
         self.Show()
+        self.preparar()
 
     def OnClicked(self, event):
         self.procesar(txt1.GetValue())
