@@ -15,7 +15,7 @@
 3. Ejecutarlo con python con el comando:
 
 ```
-py ClasificadorSVMv1.py
+py main.py
 ```
 
 ## Extras

@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jul  1 13:45:39 2018
-
-@author: Christian
-"""
 
 import numpy as np
 import pandas as pd
@@ -76,17 +70,17 @@ print(pd.crosstab(ytest, prediccion, rownames=[
       'REAL'], colnames=['PREDICCION']))
 print(classification_report(ytest, prediccion))
 Xnew = [
-    'eres una gran mujer',
-    'me diviertes mucho',
-    'que mujer mas inteligente',
-    'que tierna eres, ademas de una hermosa persona',
-    'te amo mucho, pero me haces daño',
-    'que seas muy feliz, te deseo lo mejor',
-    'maldita incompetente y loca',
-    'tu eres una zorra',
-    'guatona enferma de loca',
-    'maraca culia',
-    'eres una puta barata'
+    # 'eres una gran mujer',
+    # 'me diviertes mucho',
+    # 'que mujer mas inteligente',
+    # 'que tierna eres, ademas de una hermosa persona',
+    # 'te amo mucho, pero me haces daño',
+    # 'que seas muy feliz, te deseo lo mejor',
+    # 'maldita incompetente y loca',
+    # 'tu eres una zorra',
+    # 'guatona enferma de loca',
+    # 'maraca culia',
+    'Orsini, estudiaste leyes, cómo obtuviste el título, si es que te titularse. O sólo estudiantes las leyes de Marx. No entiendo cómo puedes hablar tanta estupidez, eres ciega, tonta o que? Pero de lo que estoy segura, es que eres una caradura, irresponsable, antipatriota, y como todos los de tu sector, descerebrados, pillos, sinvergüenzas, corruptos chupasangre del Estado. Sueldos millonarios sin trabajar, es la prioridad de uds'
 ]
 vector_new = vectorizer.transform(Xnew)
 ynew = modelo.predict(vector_new)
