@@ -55,7 +55,7 @@ class MiAplicacion(wx.Frame):
         self.addToLog("Prepararando datos...")
         # 1. CARGAR DATOS encuesta con cabecera texto, clase
         data = pd.read_csv(
-            'conSWconPOS.csv',
+            'conSWSINPOS.csv',
             # sep=';;;#',
             engine='python'
         )
@@ -89,7 +89,7 @@ class MiAplicacion(wx.Frame):
         vector_new = vectorizer.transform(Xnew)
         ynew = modelo.predict(vector_new)
         for i in range(len(Xnew)):
-            self.addToLog("X=%s, Predicted=%s" % (Xnew[i], ynew[i]))
+            self.addToLog("Comentario=%s, Predicción=%s" % (Xnew[i], ynew[i]))
 
     def __init__(self, parent, title):
         print("Creando interfaz grafica...")
@@ -105,10 +105,10 @@ class MiAplicacion(wx.Frame):
         p2sz = wx.BoxSizer(wx.HORIZONTAL)
 
         # Controles
-        st1 = wx.StaticText(p1, -1, "Predicción")
+        st1 = wx.StaticText(p1, -1, "Ingresar Comentario")
         global txt1, txt2
         txt1 = wx.TextCtrl(p1, -1)
-        st2 = wx.StaticText(p2, -1, "Ingresar Texto")
+        st2 = wx.StaticText(p2, -1, "Métricas y Predicción")
         txt2 = wx.TextCtrl(p2, -1, style=wx.TE_READONLY | wx.TE_MULTILINE)
         bt = wx.Button(self, -1, " Evaluar ")
 
