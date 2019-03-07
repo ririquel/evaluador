@@ -55,7 +55,7 @@ class MiAplicacion(wx.Frame):
         self.addToLog("Prepararando datos...")
         # 1. CARGAR DATOS encuesta con cabecera texto, clase
         data = pd.read_csv(
-            'conSWSINPOS.csv',
+            'sinSWsinPOS.csv',
             # sep=';;;#',
             engine='python'
         )
