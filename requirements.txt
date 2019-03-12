@@ -2,4 +2,4 @@ numpy
 pandas
 sklearn
 nltk
-wx
+wxPython
