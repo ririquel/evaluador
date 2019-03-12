@@ -9,7 +9,7 @@
 2. Instalar los requisitos con pip:
 
    ```bash
-   pip install -r requieriments.txt
+   pip install -r requirements.txt
    ```
 
 3. Ejecutarlo con python con el comando:
