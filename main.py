@@ -79,6 +79,7 @@ class MiAplicacion(wx.Frame):
         # modelo=tree.DecisionTreeClassifier(criterion='entropy',max_depth=29)
         # modelo=RandomForestClassifier(n_estimators=10)
         # modelo = svm.SVC(kernel='linear')
+        # modelo.fit(X=xtrain, y=ytrain)
         modelo.fit(X=xtrain.toarray(), y=ytrain)
         # print(modelo.tree_.max_depth)
 
