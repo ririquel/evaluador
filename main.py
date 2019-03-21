@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import wx
-
+from sklearn.naive_bayes import BernoulliNB
+from sklearn import tree
+from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
@@ -73,8 +75,12 @@ class MiAplicacion(wx.Frame):
 
         # 5. MODELO SVM
         global modelo
-        modelo = svm.SVC(kernel='linear')
-        modelo.fit(X=xtrain, y=ytrain)
+        modelo=BernoulliNB()
+        # modelo=tree.DecisionTreeClassifier(criterion='entropy',max_depth=29)
+        # modelo=RandomForestClassifier(n_estimators=10)
+        # modelo = svm.SVC(kernel='linear')
+        modelo.fit(X=xtrain.toarray(), y=ytrain)
+        # print(modelo.tree_.max_depth)
 
         # 6. PREDICT + METRICAS
         prediccion = modelo.predict(xtest)
